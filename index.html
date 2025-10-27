@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richard Clicker</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    #score {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #clickMe {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    #clickMe:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="score">Score: 0</div>
+  <img id="clickMe" src="RichardClicker.png" alt="Click Me!">
+
+  <script>
+    let score = 0;
+    const scoreDisplay = document.getElementById('score');
+    const clickMe = document.getElementById('clickMe');
+
+    clickMe.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = `Score: ${score}`;
+    });
+  </script>
+
+</body>
+</html>
